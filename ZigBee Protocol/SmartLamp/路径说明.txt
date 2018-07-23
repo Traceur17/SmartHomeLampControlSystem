@@ -1,0 +1,9 @@
+C:\Users\Traceur\Desktop\毕业设计\2、毕业设计程序\
+ZigBee端\
+SmartLamp\
+Projects\
+zstack\
+Samples\
+LampCtrl\
+CC2530DB\
+LampCtrl.eww

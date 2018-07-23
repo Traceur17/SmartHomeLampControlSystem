@@ -1,0 +1,1803 @@
+###############################################################################
+#
+# IAR C/C++ Compiler V10.10.1.4655 for 8051               23/May/2018  02:42:14
+# Copyright 2004-2017 IAR Systems AB.
+# Standalone license - IAR Embedded Workbench for 8051
+#
+#    Core               =  plain
+#    Code model         =  banked
+#    Data model         =  large
+#    Calling convention =  xdata reentrant
+#    Constant location  =  data_rom
+#    Dptr setup         =  1,16
+#                          
+#    Source file        =  
+#        C:\Users\Traceur\Desktop\SmartLamp\Projects\zstack\Samples\LampCtrl\Source\LampCtrl.c
+#    Command line       =  
+#        -f C:\Users\Traceur\AppData\Local\Temp\EWE3B.tmp
+#        (C:\Users\Traceur\Desktop\SmartLamp\Projects\zstack\Samples\LampCtrl\Source\LampCtrl.c
+#        -D ZIGBEEPRO -D ZTOOL_P1 -D xMT_TASK -D xMT_SYS_FUNC -D xMT_ZDO_FUNC
+#        -D LCD_SUPPORTED=DEBUG -lC
+#        C:\Users\Traceur\Desktop\SmartLamp\Projects\zstack\Samples\LampCtrl\CC2530DB\EndDeviceEB\List
+#        -lA
+#        C:\Users\Traceur\Desktop\SmartLamp\Projects\zstack\Samples\LampCtrl\CC2530DB\EndDeviceEB\List
+#        --diag_suppress Pe001,Pa010 -o
+#        C:\Users\Traceur\Desktop\SmartLamp\Projects\zstack\Samples\LampCtrl\CC2530DB\EndDeviceEB\Obj
+#        -e --debug --core=plain --dptr=16,1 --data_model=large
+#        --code_model=banked --calling_convention=xdata_reentrant
+#        --place_constants=data_rom --nr_virtual_regs 16 -f
+#        C:\Users\Traceur\Desktop\SmartLamp\Projects\zstack\Samples\LampCtrl\CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg
+#        (-DCPU32MHZ -DROOT=__near_func -DMAC_CFG_TX_DATA_MAX=3
+#        -DMAC_CFG_TX_MAX=6 -DMAC_CFG_RX_MAX=3) -f
+#        C:\Users\Traceur\Desktop\SmartLamp\Projects\zstack\Samples\LampCtrl\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg
+#        (-DZIGBEEPRO -DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
+#        -DDEFAULT_CHANLIST=0x00000800 -DZDAPP_CONFIG_PAN_ID=0xFFF1
+#        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
+#        -DBEACON_REQUEST_DELAY=100 -DBEACON_REQ_DELAY_MASK=0x00FF
+#        -DLINK_STATUS_JITTER_MASK=0x007F -DROUTE_EXPIRY_TIME=30
+#        -DAPSC_ACK_WAIT_DURATION_POLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7
+#        -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3
+#        -DNWK_MAX_DATA_RETRIES=2 -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9
+#        -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40 -DNWK_MAX_BINDING_ENTRIES=4
+#        -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01, 0x03, 0x05, 0x07,
+#        0x09, 0x0B, 0x0D, 0x0F, 0x00, 0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C,
+#        0x0D}" -DMAC_MAX_FRAME_SIZE=116 -DZDNWKMGR_MIN_TRANSMISSIONS=20
+#        "-DCONST=const __code" -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE
+#        -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100
+#        -DREJOIN_POLL_RATE=440) -I
+#        C:\Users\Traceur\Desktop\SmartLamp\Projects\zstack\Samples\LampCtrl\CC2530DB\
+#        -I
+#        C:\Users\Traceur\Desktop\SmartLamp\Projects\zstack\Samples\LampCtrl\CC2530DB\..\Source\
+#        -I
+#        C:\Users\Traceur\Desktop\SmartLamp\Projects\zstack\Samples\LampCtrl\CC2530DB\..\..\..\ZMain\TI2530DB\
+#        -I
+#        C:\Users\Traceur\Desktop\SmartLamp\Projects\zstack\Samples\LampCtrl\CC2530DB\..\..\..\..\..\Components\hal\include\
+#        -I
+#        C:\Users\Traceur\Desktop\SmartLamp\Projects\zstack\Samples\LampCtrl\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\
+#        -I
+#        C:\Users\Traceur\Desktop\SmartLamp\Projects\zstack\Samples\LampCtrl\CC2530DB\..\..\..\..\..\Components\mac\include\
+#        -I
+#        C:\Users\Traceur\Desktop\SmartLamp\Projects\zstack\Samples\LampCtrl\CC2530DB\..\..\..\..\..\Components\mac\high_level\
+#        -I
+#        C:\Users\Traceur\Desktop\SmartLamp\Projects\zstack\Samples\LampCtrl\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\
+#        -I
+#        C:\Users\Traceur\Desktop\SmartLamp\Projects\zstack\Samples\LampCtrl\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\single_chip\
+#        -I
+#        C:\Users\Traceur\Desktop\SmartLamp\Projects\zstack\Samples\LampCtrl\CC2530DB\..\..\..\..\..\Components\mt\
+#        -I
+#        C:\Users\Traceur\Desktop\SmartLamp\Projects\zstack\Samples\LampCtrl\CC2530DB\..\..\..\..\..\Components\osal\include\
+#        -I
+#        C:\Users\Traceur\Desktop\SmartLamp\Projects\zstack\Samples\LampCtrl\CC2530DB\..\..\..\..\..\Components\services\saddr\
+#        -I
+#        C:\Users\Traceur\Desktop\SmartLamp\Projects\zstack\Samples\LampCtrl\CC2530DB\..\..\..\..\..\Components\services\sdata\
+#        -I
+#        C:\Users\Traceur\Desktop\SmartLamp\Projects\zstack\Samples\LampCtrl\CC2530DB\..\..\..\..\..\Components\stack\af\
+#        -I
+#        C:\Users\Traceur\Desktop\SmartLamp\Projects\zstack\Samples\LampCtrl\CC2530DB\..\..\..\..\..\Components\stack\nwk\
+#        -I
+#        C:\Users\Traceur\Desktop\SmartLamp\Projects\zstack\Samples\LampCtrl\CC2530DB\..\..\..\..\..\Components\stack\sapi\
+#        -I
+#        C:\Users\Traceur\Desktop\SmartLamp\Projects\zstack\Samples\LampCtrl\CC2530DB\..\..\..\..\..\Components\stack\sec\
+#        -I
+#        C:\Users\Traceur\Desktop\SmartLamp\Projects\zstack\Samples\LampCtrl\CC2530DB\..\..\..\..\..\Components\stack\sys\
+#        -I
+#        C:\Users\Traceur\Desktop\SmartLamp\Projects\zstack\Samples\LampCtrl\CC2530DB\..\..\..\..\..\Components\stack\zdo\
+#        -I
+#        C:\Users\Traceur\Desktop\SmartLamp\Projects\zstack\Samples\LampCtrl\CC2530DB\..\..\..\..\..\Components\zmac\
+#        -I
+#        C:\Users\Traceur\Desktop\SmartLamp\Projects\zstack\Samples\LampCtrl\CC2530DB\..\..\..\..\..\Components\zmac\f8w\
+#        -Ohz --require_prototypes --no_code_motion)
+#    Locale             =  Chinese (Simplified)_China.936
+#    List file          =  
+#        C:\Users\Traceur\Desktop\SmartLamp\Projects\zstack\Samples\LampCtrl\CC2530DB\EndDeviceEB\List\LampCtrl.lst
+#    Object file        =  
+#        C:\Users\Traceur\Desktop\SmartLamp\Projects\zstack\Samples\LampCtrl\CC2530DB\EndDeviceEB\Obj\LampCtrl.r51
+#
+###############################################################################
+
+C:\Users\Traceur\Desktop\SmartLamp\Projects\zstack\Samples\LampCtrl\Source\LampCtrl.c
+      1          /******************************************************************************
+      2            Filename:       LampCtrl.c
+      3            Revised:        $Date: 2012-03-07 01:04:58 -0800 (Wed, 07 Mar 2012) $
+      4            Revision:       $Revision: 29656 $
+      5          
+      6            Description:    Generic Application (no Profile).
+      7          
+      8          
+      9            Copyright 2004-2012 Texas Instruments Incorporated. All rights reserved.
+     10          
+     11            IMPORTANT: Your use of this Software is limited to those specific rights
+     12            granted under the terms of a software license agreement between the user
+     13            who downloaded the software, his/her employer (which must be your employer)
+     14            and Texas Instruments Incorporated (the "License"). You may not use this
+     15            Software unless you agree to abide by the terms of the License. The License
+     16            limits your use, and you acknowledge, that the Software may not be modified,
+     17            copied or distributed unless embedded on a Texas Instruments microcontroller
+     18            or used solely and exclusively in conjunction with a Texas Instruments radio
+     19            frequency transceiver, which is integrated into your product. Other than for
+     20            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     21            works of, modify, distribute, perform, display or sell this Software and/or
+     22            its documentation for any purpose.
+     23          
+     24            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     25            PROVIDED 揂S IS?WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     26            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     27            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     28            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     29            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     30            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     31            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     32            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     33            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     34            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     35          
+     36            Should you have any questions regarding your right to use this Software,
+     37            contact Texas Instruments Incorporated at www.TI.com.
+     38          ******************************************************************************/
+     39          
+     40          /*********************************************************************
+     41            This application isn't intended to do anything useful, it is
+     42            intended to be a simple example of an application's structure.
+     43          
+     44            This application sends "Hello World" to another "Generic"
+     45            application every 5 seconds.  The application will also
+     46            receives "Hello World" packets.
+     47          
+     48            The "Hello World" messages are sent/received as MSG type message.
+     49          
+     50            This applications doesn't have a profile, so it handles everything
+     51            directly - itself.
+     52          
+     53            Key control:
+     54              SW1:
+     55              SW2:  initiates end device binding
+     56              SW3:
+     57              SW4:  initiates a match description request
+     58          *********************************************************************/
+     59          
+     60          /*********************************************************************
+     61           * INCLUDES
+     62           */
+     63          #include "OSAL.h"
+     64          #include "AF.h"
+     65          #include "ZDApp.h"
+     66          #include "ZDObject.h"
+     67          #include "ZDProfile.h"
+     68          #include "aps_groups.h"
+     69          #include "LampCtrl.h"
+     70          #include "DebugTrace.h"
+     71          
+     72          
+     73          #include "ZGlobals.h"
+     74          #include "OnBoard.h"
+     75          
+     76          
+     77          #include "MT_UART.h"
+     78          #include "MT_APP.h"
+     79          #include "MT.h"
+     80          
+     81          /* HAL */
+     82          #include "hal_lcd.h"
+     83          #include "hal_led.h"
+     84          #include "hal_key.h"
+     85          #include "hal_uart.h"
+     86          #include "hal_drivers.h"
+     87          
+     88          
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+     89          uint8 AppTitle[] = "LampCtrl";
+   \                     AppTitle:
+   \   000000                DS 9
+   \   000009                REQUIRE `?<Initializer for AppTitle>`
+   \   000009                REQUIRE __INIT_XDATA_I
+     90          
+     91          
+     92          
+     93          #if !defined( LAMPCTRL_PORT )
+     94          #define LAMPCTRL_PORT  0
+     95          #endif
+     96          
+     97          #if !defined( LAMPCTRL_BAUD )
+     98            #define LAMPCTRL_BAUD  HAL_UART_BR_115200
+     99          #endif
+    100          
+    101          // When the Rx buf space is less than this threshold, invoke the Rx callback.
+    102          #if !defined( LAMPCTRL_THRESH )
+    103          #define LAMPCTRL_THRESH  64
+    104          #endif
+    105          
+    106          #if !defined( LAMPCTRL_RX_SZ )
+    107          #define LAMPCTRL_RX_SZ  128
+    108          #endif
+    109          
+    110          #if !defined( LAMPCTRL_TX_SZ )
+    111          #define LAMPCTRL_TX_SZ  128
+    112          #endif
+    113          
+    114          // Millisecs of idle time after a byte is received before invoking Rx callback.
+    115          #if !defined( LAMPCTRL_IDLE )
+    116          #define LAMPCTRL_IDLE  6
+    117          #endif
+    118          
+    119          // Loopback Rx bytes to Tx for throughput testing.
+    120          #if !defined( LAMPCTRL_LOOPBACK )
+    121          #define LAMPCTRL_LOOPBACK  FALSE
+    122          #endif
+    123          
+    124          // This is the max byte count per OTA message.
+    125          #if !defined( LAMPCTRL_TX_MAX )
+    126          #define LAMPCTRL_TX_MAX  80
+    127          #endif
+    128          
+    129          #define LAMPCTRL_RSP_CNT  4
+    130          
+    131          
+    132          
+    133          // This list should be filled with Application specific Cluster IDs.
+
+   \                                 In  segment XDATA_ROM_C, align 1
+    134          const cId_t LampCtrl_ClusterList[LAMPCTRL_MAX_CLUSTERS] =
+   \                     LampCtrl_ClusterList:
+   \   000000   0100         DW 1
+   \   000002   0200         DW 2
+   \   000004   0300         DW 3
+    135          {
+    136            LAMPCTRL_KEYMSG_CLUSTERID,
+    137            LAMPCTRL_PCMSG_CLUSTERID,
+    138            LAMPCTRL_REGMSG_CLUSTERID
+    139          };
+    140          
+
+   \                                 In  segment XDATA_ROM_C, align 1
+    141          const SimpleDescriptionFormat_t LampCtrl_SimpleDesc =
+   \                     LampCtrl_SimpleDesc:
+   \   000000   0A           DB 10
+   \   000001   040F         DW 3844
+   \   000003   0100         DW 1
+   \   000005   00           DB 0
+   \   000006   03           DB 3
+   \   000007   ....         DW LampCtrl_ClusterList
+   \   000009   03           DB 3
+   \   00000A   ....         DW LampCtrl_ClusterList
+    142          {
+    143            LAMPCTRL_ENDPOINT,              //  int Endpoint;
+    144            LAMPCTRL_PROFID,                //  uint16 AppProfId[2];
+    145            LAMPCTRL_DEVICEID,              //  uint16 AppDeviceId[2];
+    146            LAMPCTRL_DEVICE_VERSION,        //  int   AppDevVer:4;
+    147            LAMPCTRL_FLAGS,                 //  int   AppFlags:4;
+    148            LAMPCTRL_MAX_CLUSTERS,          //  byte  AppNumInClusters;
+    149            (cId_t *)LampCtrl_ClusterList,  //  byte *pAppInClusterList;
+    150            LAMPCTRL_MAX_CLUSTERS,          //  byte  AppNumInClusters;
+    151            (cId_t *)LampCtrl_ClusterList   //  byte *pAppInClusterList;
+    152          };
+    153          
+    154          
+    155          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    156          uint8 LampCtrl_TaskID;   // Task ID for internal task/event processing
+   \                     LampCtrl_TaskID:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+    157                                    // This variable will be received when
+    158                                    // LampCtrl_Init() is called.
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    159          devStates_t LampCtrl_NwkState;
+   \                     LampCtrl_NwkState:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+    160          
+    161          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    162          uint8 LampCtrl_TransID;  // This is the unique message ID (counter)统计数据发送包 个数
+   \                     LampCtrl_TransID:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+    163          
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+    164          endPointDesc_t LampCtrl_epDesc = 
+   \                     LampCtrl_epDesc:
+   \   000000                DS 6
+   \   000006                REQUIRE `?<Initializer for LampCtrl_epDesc>`
+   \   000006                REQUIRE __INIT_XDATA_I
+    165          {
+    166            LAMPCTRL_ENDPOINT,
+    167            &LampCtrl_TaskID,
+    168            (SimpleDescriptionFormat_t *)&LampCtrl_SimpleDesc,
+    169            noLatencyReqs
+    170          };
+    171          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    172          afAddrType_t LampCtrl_Periodic_DstAddr;
+   \                     LampCtrl_Periodic_DstAddr:
+   \   000000                DS 12
+   \   00000C                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    173          afAddrType_t LampCtrl_Flash_DstAddr;
+   \                     LampCtrl_Flash_DstAddr:
+   \   000000                DS 12
+   \   00000C                REQUIRE __INIT_XDATA_Z
+    174          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    175          aps_Group_t LampCtrl_Group;
+   \                     LampCtrl_Group:
+   \   000000                DS 18
+   \   000012                REQUIRE __INIT_XDATA_Z
+    176          
+    177          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    178          static afAddrType_t LampCtrl_TxAddr;
+   \                     LampCtrl_TxAddr:
+   \   000000                DS 12
+   \   00000C                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    179          static uint8 LampCtrl_TxBuf[LAMPCTRL_TX_MAX+1];
+   \                     LampCtrl_TxBuf:
+   \   000000                DS 81
+   \   000051                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    180          static uint8 LampCtrl_TxLen;
+   \                     LampCtrl_TxLen:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+    181          
+    182          
+    183          
+    184          /*********************************************************************
+    185           * LOCAL FUNCTIONS
+    186           */
+    187          static void LampCtrl_HandleKeys( uint8 shift, uint8 keys );
+    188          static void LampCtrl_MessageMSGCB( afIncomingMSGPacket_t *pckt );
+    189          static void LampCtrl_CallBack(uint8 port , uint8 event);
+    190          static void LampCtrl_Send( void );
+    191          
+    192          
+    193          /*********************************************************************
+    194           * @fn      LampCtrl_Init
+    195           *
+    196           * @brief   Initialization function for the Generic App Task.
+    197           *          This is called during initialization and should contain
+    198           *          any application specific initialization (ie. hardware
+    199           *          initialization/setup, table initialization, power up
+    200           *          notificaiton ... ).
+    201           *
+    202           * @param   task_id - the ID assigned by OSAL.  This ID should be
+    203           *                    used to send messages and set timers.
+    204           *
+    205           * @return  none
+    206           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    207          void LampCtrl_Init( uint8 task_id )
+   \                     LampCtrl_Init:
+    208          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000   74F5         MOV       A,#-0xb
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 11
+   \   000005                ; Auto size: 29
+   \   000005   74E3         MOV       A,#-0x1d
+   \   000007   12....       LCALL     ?ALLOC_XSTACK8
+   \   00000A   E9           MOV       A,R1
+   \   00000B   FE           MOV       R6,A
+    209            LampCtrl_TaskID = task_id;
+   \   00000C   90....       MOV       DPTR,#LampCtrl_TaskID
+   \   00000F   F0           MOVX      @DPTR,A
+    210            LampCtrl_NwkState = DEV_INIT;
+   \   000010   90....       MOV       DPTR,#LampCtrl_NwkState
+   \   000013   7401         MOV       A,#0x1
+   \   000015   F0           MOVX      @DPTR,A
+    211            LampCtrl_TransID = 0;
+   \   000016   90....       MOV       DPTR,#LampCtrl_TransID
+   \   000019   E4           CLR       A
+   \   00001A   F0           MOVX      @DPTR,A
+    212            LampCtrl_TxLen = 0;
+   \   00001B   90....       MOV       DPTR,#LampCtrl_TxLen
+   \   00001E   F0           MOVX      @DPTR,A
+    213            
+    214            
+    215              #if defined ( HOLD_AUTO_START )
+    216            // HOLD_AUTO_START is a compile option that will surpress ZDApp
+    217            //  from starting the device and wait for the application to
+    218            //  start the device.
+    219            ZDOInitDevice(0);
+    220          #endif
+    221            
+    222            
+    223            RegisterForKeys( LampCtrl_TaskID );//为按键事件登记在LampCtrl下
+   \   00001F                ; Setup parameters for call to function RegisterForKeys
+   \   00001F   12....       LCALL     `??RegisterForKeys::?relay`; Banked call to: RegisterForKeys
+    224            
+    225            halUARTCfg_t uartConfig;//记录串口设置信息
+    226          
+    227            //初始化串口
+    228            uartConfig.configured           = TRUE;
+   \   000022   85..82       MOV       DPL,?XSP + 0
+   \   000025   85..83       MOV       DPH,?XSP + 1
+   \   000028   7401         MOV       A,#0x1
+   \   00002A   F0           MOVX      @DPTR,A
+    229            uartConfig.baudRate             = LAMPCTRL_BAUD;
+   \   00002B   12....       LCALL     ?XSTACK_DISP0_8
+   \   00002E   7404         MOV       A,#0x4
+   \   000030   F0           MOVX      @DPTR,A
+    230            uartConfig.flowControl          = FALSE;
+   \   000031   7402         MOV       A,#0x2
+   \   000033   12....       LCALL     ?XSTACK_DISP0_8
+   \   000036   E4           CLR       A
+   \   000037   F0           MOVX      @DPTR,A
+    231            uartConfig.flowControlThreshold = LAMPCTRL_THRESH;
+   \   000038   7403         MOV       A,#0x3
+   \   00003A   12....       LCALL     ?XSTACK_DISP0_8
+   \   00003D   7440         MOV       A,#0x40
+   \   00003F   F0           MOVX      @DPTR,A
+   \   000040   A3           INC       DPTR
+   \   000041   E4           CLR       A
+   \   000042   F0           MOVX      @DPTR,A
+    232            uartConfig.rx.maxBufSize        = LAMPCTRL_RX_SZ;
+   \   000043   740A         MOV       A,#0xa
+   \   000045   12....       LCALL     ?XSTACK_DISP0_8
+   \   000048   7480         MOV       A,#-0x80
+   \   00004A   F0           MOVX      @DPTR,A
+   \   00004B   A3           INC       DPTR
+   \   00004C   E4           CLR       A
+   \   00004D   F0           MOVX      @DPTR,A
+    233            uartConfig.tx.maxBufSize        = LAMPCTRL_TX_SZ;
+   \   00004E   7412         MOV       A,#0x12
+   \   000050   12....       LCALL     ?XSTACK_DISP0_8
+   \   000053   7480         MOV       A,#-0x80
+   \   000055   F0           MOVX      @DPTR,A
+   \   000056   A3           INC       DPTR
+   \   000057   E4           CLR       A
+   \   000058   F0           MOVX      @DPTR,A
+    234            uartConfig.idleTimeout          = LAMPCTRL_IDLE;
+   \   000059   7405         MOV       A,#0x5
+   \   00005B   12....       LCALL     ?XSTACK_DISP0_8
+   \   00005E   7406         MOV       A,#0x6
+   \   000060   F0           MOVX      @DPTR,A
+    235            uartConfig.intEnable            = TRUE;         
+   \   000061   7416         MOV       A,#0x16
+   \   000063   12....       LCALL     ?XSTACK_DISP0_8
+   \   000066   7401         MOV       A,#0x1
+   \   000068   F0           MOVX      @DPTR,A
+    236            uartConfig.callBackFunc         = LampCtrl_CallBack;
+   \   000069   741B         MOV       A,#0x1b
+   \   00006B   12....       LCALL     ?XSTACK_DISP0_8
+   \   00006E   74..         MOV       A,#`??LampCtrl_CallBack::?relay` & 0xff
+   \   000070   F0           MOVX      @DPTR,A
+   \   000071   A3           INC       DPTR
+   \   000072   74..         MOV       A,#(`??LampCtrl_CallBack::?relay` >> 8) & 0xff
+   \   000074   F0           MOVX      @DPTR,A
+    237            //打开串口
+    238            HalUARTOpen (LAMPCTRL_PORT, &uartConfig);
+   \   000075                ; Setup parameters for call to function HalUARTOpen
+   \   000075   AA..         MOV       R2,?XSP + 0
+   \   000077   AB..         MOV       R3,?XSP + 1
+   \   000079   7900         MOV       R1,#0x0
+   \   00007B   12....       LCALL     `??HalUARTOpen::?relay`; Banked call to: HalUARTOpen
+    239            
+    240            MT_UartRegisterTaskID(task_id); //注册串口任务
+   \   00007E                ; Setup parameters for call to function MT_UartRegisterTaskID
+   \   00007E   EE           MOV       A,R6
+   \   00007F   F9           MOV       R1,A
+   \   000080   12....       LCALL     `??MT_UartRegisterTaskID::?relay`; Banked call to: MT_UartRegisterTaskID
+    241          
+    242          
+    243            // Setup for the periodic message's destination address
+    244            // Broadcast to everyone
+    245            LampCtrl_Periodic_DstAddr.addrMode = (afAddrMode_t)AddrBroadcast;
+   \   000083   90....       MOV       DPTR,#LampCtrl_Periodic_DstAddr + 8
+   \   000086   740F         MOV       A,#0xf
+   \   000088   F0           MOVX      @DPTR,A
+    246            LampCtrl_Periodic_DstAddr.endPoint = LAMPCTRL_ENDPOINT;
+   \   000089   A3           INC       DPTR
+   \   00008A   740A         MOV       A,#0xa
+   \   00008C   F0           MOVX      @DPTR,A
+    247            LampCtrl_Periodic_DstAddr.addr.shortAddr = 0xFFFF;
+   \   00008D   90....       MOV       DPTR,#LampCtrl_Periodic_DstAddr
+   \   000090   74FF         MOV       A,#-0x1
+   \   000092   F0           MOVX      @DPTR,A
+   \   000093   A3           INC       DPTR
+   \   000094   F0           MOVX      @DPTR,A
+    248          
+    249            // Setup for the flash command's destination address - Group 1
+    250            LampCtrl_Flash_DstAddr.addrMode = (afAddrMode_t)afAddrGroup;
+   \   000095   90....       MOV       DPTR,#LampCtrl_Flash_DstAddr + 8
+   \   000098   7401         MOV       A,#0x1
+   \   00009A   F0           MOVX      @DPTR,A
+    251            LampCtrl_Flash_DstAddr.endPoint = LAMPCTRL_ENDPOINT;
+   \   00009B   A3           INC       DPTR
+   \   00009C   740A         MOV       A,#0xa
+   \   00009E   F0           MOVX      @DPTR,A
+    252            LampCtrl_Flash_DstAddr.addr.shortAddr = LAMPCTRL_FLASH_GROUP;
+   \   00009F   90....       MOV       DPTR,#LampCtrl_Flash_DstAddr
+   \   0000A2   7401         MOV       A,#0x1
+   \   0000A4   F0           MOVX      @DPTR,A
+   \   0000A5   A3           INC       DPTR
+   \   0000A6   E4           CLR       A
+   \   0000A7   F0           MOVX      @DPTR,A
+    253            
+    254            LampCtrl_TxAddr.addrMode = (afAddrMode_t)Addr16Bit;
+   \   0000A8   90....       MOV       DPTR,#LampCtrl_TxAddr + 8
+   \   0000AB   7402         MOV       A,#0x2
+   \   0000AD   F0           MOVX      @DPTR,A
+    255            LampCtrl_TxAddr.endPoint = LAMPCTRL_ENDPOINT;
+   \   0000AE   A3           INC       DPTR
+   \   0000AF   740A         MOV       A,#0xa
+   \   0000B1   F0           MOVX      @DPTR,A
+    256            LampCtrl_TxAddr.addr.shortAddr = 0xFFFF;
+   \   0000B2   90....       MOV       DPTR,#LampCtrl_TxAddr
+   \   0000B5   74FF         MOV       A,#-0x1
+   \   0000B7   F0           MOVX      @DPTR,A
+   \   0000B8   A3           INC       DPTR
+   \   0000B9   F0           MOVX      @DPTR,A
+    257              
+    258              
+    259            afRegister( &LampCtrl_epDesc );//将endpoint登记到AF
+   \   0000BA                ; Setup parameters for call to function afRegister
+   \   0000BA   7A..         MOV       R2,#LampCtrl_epDesc & 0xff
+   \   0000BC   7B..         MOV       R3,#(LampCtrl_epDesc >> 8) & 0xff
+   \   0000BE   12....       LCALL     `??afRegister::?relay`; Banked call to: afRegister
+    260          
+    261            // 默认将所有设备分到第一组
+    262            LampCtrl_Group.ID = 0x0001;
+   \   0000C1   90....       MOV       DPTR,#LampCtrl_Group
+   \   0000C4   7401         MOV       A,#0x1
+   \   0000C6   F0           MOVX      @DPTR,A
+   \   0000C7   A3           INC       DPTR
+   \   0000C8   E4           CLR       A
+   \   0000C9   F0           MOVX      @DPTR,A
+    263            osal_memcpy( LampCtrl_Group.name, "Group 1", 7 );
+   \   0000CA                ; Setup parameters for call to function osal_memcpy
+   \   0000CA   75....       MOV       ?V0,#`?<Constant "Group 1">` & 0xff
+   \   0000CD   75....       MOV       ?V1,#(`?<Constant "Group 1">` >> 8) & 0xff
+   \   0000D0   F5..         MOV       ?V2,A
+   \   0000D2   78..         MOV       R0,#?V0
+   \   0000D4   12....       LCALL     ?PUSH_XSTACK_I_THREE
+   \   0000D7   7C07         MOV       R4,#0x7
+   \   0000D9   7D00         MOV       R5,#0x0
+   \   0000DB   7A..         MOV       R2,#(LampCtrl_Group + 2) & 0xff
+   \   0000DD   7B..         MOV       R3,#((LampCtrl_Group + 2) >> 8) & 0xff
+   \   0000DF   12....       LCALL     `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+   \   0000E2   7403         MOV       A,#0x3
+   \   0000E4   12....       LCALL     ?DEALLOC_XSTACK8
+    264            aps_AddGroup( LAMPCTRL_ENDPOINT, &LampCtrl_Group );
+   \   0000E7                ; Setup parameters for call to function aps_AddGroup
+   \   0000E7   7A..         MOV       R2,#LampCtrl_Group & 0xff
+   \   0000E9   7B..         MOV       R3,#(LampCtrl_Group >> 8) & 0xff
+   \   0000EB   790A         MOV       R1,#0xa
+   \   0000ED   12....       LCALL     `??aps_AddGroup::?relay`; Banked call to: aps_AddGroup
+    265            
+    266            
+    267            // Update the display
+    268          #if defined ( LCD_SUPPORTED )
+    269            HalLcdWriteString( "LampCtrl", HAL_LCD_LINE_1 );
+   \   0000F0                ; Setup parameters for call to function HalLcdWriteString
+   \   0000F0   7900         MOV       R1,#0x0
+   \   0000F2   7A..         MOV       R2,#`?<Constant "LampCtrl">` & 0xff
+   \   0000F4   7B..         MOV       R3,#(`?<Constant "LampCtrl">` >> 8) & 0xff
+   \   0000F6   12....       LCALL     `??HalLcdWriteString::?relay`; Banked call to: HalLcdWriteString
+    270          #endif
+    271          
+    272            ZDO_RegisterForZDOMsg( LampCtrl_TaskID, End_Device_Bind_rsp );
+   \   0000F9                ; Setup parameters for call to function ZDO_RegisterForZDOMsg
+   \   0000F9   7A20         MOV       R2,#0x20
+   \   0000FB   7B80         MOV       R3,#-0x80
+   \   0000FD   90....       MOV       DPTR,#LampCtrl_TaskID
+   \   000100   E0           MOVX      A,@DPTR
+   \   000101   F9           MOV       R1,A
+   \   000102   12....       LCALL     `??ZDO_RegisterForZDOMsg::?relay`; Banked call to: ZDO_RegisterForZDOMsg
+    273            ZDO_RegisterForZDOMsg( LampCtrl_TaskID, Match_Desc_rsp );
+   \   000105                ; Setup parameters for call to function ZDO_RegisterForZDOMsg
+   \   000105   7A06         MOV       R2,#0x6
+   \   000107   7B80         MOV       R3,#-0x80
+   \   000109   90....       MOV       DPTR,#LampCtrl_TaskID
+   \   00010C   E0           MOVX      A,@DPTR
+   \   00010D   F9           MOV       R1,A
+   \   00010E   12....       LCALL     `??ZDO_RegisterForZDOMsg::?relay`; Banked call to: ZDO_RegisterForZDOMsg
+    274          
+    275          }
+   \   000111   741D         MOV       A,#0x1d
+   \   000113   12....       LCALL     ?DEALLOC_XSTACK8
+   \   000116   7F03         MOV       R7,#0x3
+   \   000118   02....       LJMP      ?BANKED_LEAVE_XDATA
+    276          /*  end of LampCtrl_Init  */
+    277          
+    278          
+    279          
+    280          /*********************************************************************
+    281           * @fn      LampCtrl_ProcessEvent
+    282           *
+    283           * @brief   Generic Application Task event processor.  This function
+    284           *          is called to process all events for the task.  Events
+    285           *          include timers, messages and any other user defined events.
+    286           *
+    287           * @param   task_id  - The OSAL assigned task ID.
+    288           * @param   events - events to process.  This is a bit map and can
+    289           *                   contain more than one event.
+    290           *
+    291           * @return  none
+    292           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    293          uint16 LampCtrl_ProcessEvent( uint8 task_id, uint16 events )
+   \                     LampCtrl_ProcessEvent:
+    294          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000   74F4         MOV       A,#-0xc
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 34
+   \   000005   74DE         MOV       A,#-0x22
+   \   000007   12....       LCALL     ?ALLOC_XSTACK8
+   \   00000A   EA           MOV       A,R2
+   \   00000B   FE           MOV       R6,A
+   \   00000C   EB           MOV       A,R3
+   \   00000D   FF           MOV       R7,A
+    295            afIncomingMSGPacket_t *MSGpkt;
+    296            afDataConfirm_t *afDataConfirm;
+    297          
+    298            // Data Confirmation message fields
+    299            uint8 sentEP;
+    300            ZStatus_t sentStatus;
+    301            uint8 sentTransID;       // This should match the value sent
+    302            (void)task_id;  // Intentionally unreferenced parameter
+    303          
+    304            if ( events & SYS_EVENT_MSG )
+   \   00000E   5480         ANL       A,#0x80
+   \   000010   7003         JNZ       $+5
+   \   000012   02....       LJMP      ??LampCtrl_ProcessEvent_0 & 0xFFFF
+    305            {
+    306              MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( LampCtrl_TaskID );
+   \   000015                ; Setup parameters for call to function osal_msg_receive
+   \   000015   02....       LJMP      ??LampCtrl_ProcessEvent_1 & 0xFFFF
+    307              while ( MSGpkt )
+    308              {
+    309                switch ( MSGpkt->hdr.event )
+    310                {
+    311                  case KEY_CHANGE:
+    312                    LampCtrl_HandleKeys( ((keyChange_t *)MSGpkt)->state, ((keyChange_t *)MSGpkt)->keys );
+    313                    break;
+    314                    
+    315                  case AF_INCOMING_MSG_CMD:
+    316                    LampCtrl_MessageMSGCB( MSGpkt );
+    317                    break;
+    318          
+    319          
+    320                  case AF_DATA_CONFIRM_CMD:
+    321                    // This message is received as a confirmation of a data packet sent.
+    322                    // The status is of ZStatus_t type [defined in ZComDef.h]
+    323                    // The message fields are defined in AF.h
+    324                    afDataConfirm = (afDataConfirm_t *)MSGpkt;
+    325                    sentEP = afDataConfirm->endpoint;
+    326                    sentStatus = afDataConfirm->hdr.status;
+    327                    sentTransID = afDataConfirm->transID;
+    328                    (void)sentEP;
+    329                    (void)sentTransID;
+    330          
+    331                    // Action taken when confirmation is received.
+    332                    if ( sentStatus != ZSuccess )
+    333                    {
+    334                      // The data wasn't delivered -- Do something
+    335                    }
+    336                    break;
+    337          
+    338                  case ZDO_STATE_CHANGE:
+    339                    LampCtrl_NwkState = (devStates_t)(MSGpkt->hdr.status);
+   \                     ??LampCtrl_ProcessEvent_2:
+   \   000018   A3           INC       DPTR
+   \   000019   E0           MOVX      A,@DPTR
+   \   00001A   90....       MOV       DPTR,#LampCtrl_NwkState
+   \   00001D   F0           MOVX      @DPTR,A
+    340                    
+    341                    if ( (LampCtrl_NwkState == DEV_ROUTER) || (LampCtrl_NwkState == DEV_END_DEVICE) )
+   \   00001E   6407         XRL       A,#0x7
+   \   000020   6008         JZ        ??LampCtrl_ProcessEvent_3
+   \   000022   E0           MOVX      A,@DPTR
+   \   000023   6406         XRL       A,#0x6
+   \   000025   6003         JZ        $+5
+   \   000027   02....       LJMP      ??LampCtrl_ProcessEvent_4 & 0xFFFF
+    342                    {
+    343          
+    344                      uint8 reg1[17] = "Register,KEY1,on,";
+   \                     ??LampCtrl_ProcessEvent_3:
+   \   00002A   90....       MOV       DPTR,#`?<Constant "Register,KEY1,on,">`
+   \   00002D   7411         MOV       A,#0x11
+   \   00002F   12....       LCALL     ?XSTACK_DISP102_8
+   \   000032   7411         MOV       A,#0x11
+   \   000034   12....       LCALL     ?MOVE_LONG8_XDATA_XDATA
+    345                      
+    346                      AF_DataRequest(&LampCtrl_Periodic_DstAddr,
+    347                                    &LampCtrl_epDesc,
+    348                                    LAMPCTRL_REGMSG_CLUSTERID,
+    349                                    sizeof(reg1),
+    350                                    reg1,
+    351                                    &LampCtrl_TransID,
+    352                                    AF_DISCV_ROUTE,
+    353                                    AF_DEFAULT_RADIUS );
+   \   000037                ; Setup parameters for call to function AF_DataRequest
+   \   000037   75..1E       MOV       ?V2,#0x1e
+   \   00003A   78..         MOV       R0,#?V2
+   \   00003C   12....       LCALL     ?PUSH_XSTACK_I_ONE
+   \   00003F   75....       MOV       ?V2,#LampCtrl_TransID & 0xff
+   \   000042   75....       MOV       ?V3,#(LampCtrl_TransID >> 8) & 0xff
+   \   000045   78..         MOV       R0,#?V2
+   \   000047   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   00004A   7414         MOV       A,#0x14
+   \   00004C   12....       LCALL     ?XSTACK_DISP100_8
+   \   00004F   88..         MOV       ?V2,R0
+   \   000051   89..         MOV       ?V3,R1
+   \   000053   78..         MOV       R0,#?V2
+   \   000055   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   000058   75..11       MOV       ?V2,#0x11
+   \   00005B   75..00       MOV       ?V3,#0x0
+   \   00005E   78..         MOV       R0,#?V2
+   \   000060   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   000063   75..03       MOV       ?V2,#0x3
+   \   000066   78..         MOV       R0,#?V2
+   \   000068   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   00006B   7920         MOV       R1,#0x20
+   \   00006D   7C..         MOV       R4,#LampCtrl_epDesc & 0xff
+   \   00006F   7D..         MOV       R5,#(LampCtrl_epDesc >> 8) & 0xff
+   \   000071   7A..         MOV       R2,#LampCtrl_Periodic_DstAddr & 0xff
+   \   000073   7B..         MOV       R3,#(LampCtrl_Periodic_DstAddr >> 8) & 0xff
+   \   000075   12....       LCALL     `??AF_DataRequest::?relay`; Banked call to: AF_DataRequest
+   \   000078   7409         MOV       A,#0x9
+   \   00007A   12....       LCALL     ?DEALLOC_XSTACK8
+    354                      
+    355                      uint8 reg2[17] = "Register,KEY2,on,";
+   \   00007D   90....       MOV       DPTR,#`?<Constant "Register,KEY2,on,">`
+   \   000080   AC..         MOV       R4,?XSP + 0
+   \   000082   AD..         MOV       R5,?XSP + 1
+   \   000084   7411         MOV       A,#0x11
+   \   000086   12....       LCALL     ?MOVE_LONG8_XDATA_XDATA
+    356                      AF_DataRequest(&LampCtrl_Periodic_DstAddr,
+    357                                    &LampCtrl_epDesc,
+    358                                    LAMPCTRL_REGMSG_CLUSTERID,
+    359                                    sizeof(reg2),
+    360                                    reg2,
+    361                                    &LampCtrl_TransID,
+    362                                    AF_DISCV_ROUTE,
+    363                                    AF_DEFAULT_RADIUS );
+   \   000089                ; Setup parameters for call to function AF_DataRequest
+   \   000089   75..1E       MOV       ?V2,#0x1e
+   \   00008C   78..         MOV       R0,#?V2
+   \   00008E   12....       LCALL     ?PUSH_XSTACK_I_ONE
+   \   000091   75....       MOV       ?V2,#LampCtrl_TransID & 0xff
+   \   000094   75....       MOV       ?V3,#(LampCtrl_TransID >> 8) & 0xff
+   \   000097   78..         MOV       R0,#?V2
+   \   000099   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   00009C   7403         MOV       A,#0x3
+   \   00009E   12....       LCALL     ?XSTACK_DISP100_8
+   \   0000A1   88..         MOV       ?V2,R0
+   \   0000A3   89..         MOV       ?V3,R1
+   \   0000A5   78..         MOV       R0,#?V2
+   \   0000A7   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   0000AA   75..11       MOV       ?V2,#0x11
+   \   0000AD   75..00       MOV       ?V3,#0x0
+   \   0000B0   78..         MOV       R0,#?V2
+   \   0000B2   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   0000B5   75..03       MOV       ?V2,#0x3
+   \   0000B8   78..         MOV       R0,#?V2
+   \   0000BA   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   0000BD   7920         MOV       R1,#0x20
+   \   0000BF   7C..         MOV       R4,#LampCtrl_epDesc & 0xff
+   \   0000C1   7D..         MOV       R5,#(LampCtrl_epDesc >> 8) & 0xff
+   \   0000C3   7A..         MOV       R2,#LampCtrl_Periodic_DstAddr & 0xff
+   \   0000C5   7B..         MOV       R3,#(LampCtrl_Periodic_DstAddr >> 8) & 0xff
+   \   0000C7   12....       LCALL     `??AF_DataRequest::?relay`; Banked call to: AF_DataRequest
+   \   0000CA   7409         MOV       A,#0x9
+   \   0000CC   12....       LCALL     ?DEALLOC_XSTACK8
+    364                      
+    365                      uint16 flashTime = BUILD_UINT16(LO_UINT16( LAMPCTRL_FLASH_DURATION ), HI_UINT16( LAMPCTRL_FLASH_DURATION ) );
+    366                      HalLedBlink( HAL_LED_3, 4, 50, (flashTime / 2) );//3号灯闪烁4次
+   \   0000CF                ; Setup parameters for call to function HalLedBlink
+   \   0000CF   7CF4         MOV       R4,#-0xc
+   \   0000D1   7D01         MOV       R5,#0x1
+   \   0000D3   7B32         MOV       R3,#0x32
+   \   0000D5   7A04         MOV       R2,#0x4
+   \   0000D7   7904         MOV       R1,#0x4
+   \   0000D9   12....       LCALL     `??HalLedBlink::?relay`; Banked call to: HalLedBlink
+    367          
+    368          
+    369                      
+    370                    }
+    371                    break;
+    372          
+    373          
+    374                  default:
+    375                    break;
+    376                }
+    377          
+    378                // Release the memory
+    379                osal_msg_deallocate( (uint8 *)MSGpkt );
+   \                     ??LampCtrl_ProcessEvent_4:
+   \   0000DC                ; Setup parameters for call to function osal_msg_deallocate
+   \   0000DC   AA..         MOV       R2,?V0
+   \   0000DE   AB..         MOV       R3,?V1
+   \   0000E0   12....       LCALL     `??osal_msg_deallocate::?relay`; Banked call to: osal_msg_deallocate
+    380          
+    381                // Next
+    382                MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( LampCtrl_TaskID );
+   \   0000E3                ; Setup parameters for call to function osal_msg_receive
+   \                     ??LampCtrl_ProcessEvent_1:
+   \   0000E3   90....       MOV       DPTR,#LampCtrl_TaskID
+   \   0000E6   E0           MOVX      A,@DPTR
+   \   0000E7   F9           MOV       R1,A
+   \   0000E8   12....       LCALL     `??osal_msg_receive::?relay`; Banked call to: osal_msg_receive
+   \   0000EB   8A..         MOV       ?V0,R2
+   \   0000ED   8B..         MOV       ?V1,R3
+   \   0000EF   E5..         MOV       A,?V0
+   \   0000F1   45..         ORL       A,?V1
+   \   0000F3   6035         JZ        ??LampCtrl_ProcessEvent_5
+   \   0000F5   85..82       MOV       DPL,?V0
+   \   0000F8   85..83       MOV       DPH,?V1
+   \   0000FB   E0           MOVX      A,@DPTR
+   \   0000FC   24E6         ADD       A,#-0x1a
+   \   0000FE   6021         JZ        ??LampCtrl_ProcessEvent_6
+   \   000100   245A         ADD       A,#0x5a
+   \   000102   6009         JZ        ??LampCtrl_ProcessEvent_7
+   \   000104   24EF         ADD       A,#-0x11
+   \   000106   7003         JNZ       $+5
+   \   000108   02....       LJMP      ??LampCtrl_ProcessEvent_2 & 0xFFFF
+   \   00010B   80CF         SJMP      ??LampCtrl_ProcessEvent_4
+   \                     ??LampCtrl_ProcessEvent_7:
+   \   00010D                ; Setup parameters for call to function LampCtrl_HandleKeys
+   \   00010D   A3           INC       DPTR
+   \   00010E   A3           INC       DPTR
+   \   00010F   A3           INC       DPTR
+   \   000110   E0           MOVX      A,@DPTR
+   \   000111   FA           MOV       R2,A
+   \   000112   85..82       MOV       DPL,?V0
+   \   000115   85..83       MOV       DPH,?V1
+   \   000118   A3           INC       DPTR
+   \   000119   A3           INC       DPTR
+   \   00011A   E0           MOVX      A,@DPTR
+   \   00011B   F9           MOV       R1,A
+   \   00011C   12....       LCALL     `??LampCtrl_HandleKeys::?relay`; Banked call to: LampCtrl_HandleKeys
+   \   00011F   80BB         SJMP      ??LampCtrl_ProcessEvent_4
+   \                     ??LampCtrl_ProcessEvent_6:
+   \   000121                ; Setup parameters for call to function LampCtrl_MessageMSGCB
+   \   000121   AA..         MOV       R2,?V0
+   \   000123   AB..         MOV       R3,?V1
+   \   000125   12....       LCALL     `??LampCtrl_MessageMSGCB::?relay`; Banked call to: LampCtrl_MessageMSGCB
+   \   000128   80B2         SJMP      ??LampCtrl_ProcessEvent_4
+    383              }
+    384          
+    385              // return unprocessed events
+    386              return (events ^ SYS_EVENT_MSG);
+   \                     ??LampCtrl_ProcessEvent_5:
+   \   00012A   EE           MOV       A,R6
+   \   00012B   FA           MOV       R2,A
+   \   00012C   EF           MOV       A,R7
+   \   00012D   6480         XRL       A,#0x80
+   \   00012F   8016         SJMP      ??LampCtrl_ProcessEvent_8
+    387            }
+    388          
+    389            // Send a message out - This event is generated by a timer
+    390            //  (setup in LampCtrl_Init()).
+    391            if ( events & LAMPCTRL_SEND_MSG_EVT )
+   \                     ??LampCtrl_ProcessEvent_0:
+   \   000131   EE           MOV       A,R6
+   \   000132   A2E0         MOV       C,0xE0 /* A   */.0
+   \   000134   5005         JNC       ??LampCtrl_ProcessEvent_9
+    392            {
+    393              
+    394          
+    395              // return unprocessed events
+    396              return (events ^ LAMPCTRL_SEND_MSG_EVT);
+   \   000136   6401         XRL       A,#0x1
+   \   000138   FA           MOV       R2,A
+   \   000139   8013         SJMP      ??LampCtrl_ProcessEvent_10
+    397            }
+    398            
+    399            if ( events & LAMPCTRL_SEND_EVT )
+   \                     ??LampCtrl_ProcessEvent_9:
+   \   00013B   5402         ANL       A,#0x2
+   \   00013D   600B         JZ        ??LampCtrl_ProcessEvent_11
+    400            {
+    401              LampCtrl_Send();
+   \   00013F                ; Setup parameters for call to function LampCtrl_Send
+   \   00013F   12....       LCALL     `??LampCtrl_Send::?relay`; Banked call to: LampCtrl_Send
+    402              return ( events^LAMPCTRL_SEND_EVT );
+   \   000142   EE           MOV       A,R6
+   \   000143   6402         XRL       A,#0x2
+   \   000145   FA           MOV       R2,A
+   \   000146   EF           MOV       A,R7
+   \                     ??LampCtrl_ProcessEvent_8:
+   \   000147   FB           MOV       R3,A
+   \   000148   8004         SJMP      ??LampCtrl_ProcessEvent_10
+    403            }
+    404          
+    405            // Discard unknown events
+    406            return 0;
+   \                     ??LampCtrl_ProcessEvent_11:
+   \   00014A   7A00         MOV       R2,#0x0
+   \   00014C   7B00         MOV       R3,#0x0
+   \                     ??LampCtrl_ProcessEvent_10:
+   \   00014E   7422         MOV       A,#0x22
+   \   000150   12....       LCALL     ?DEALLOC_XSTACK8
+   \   000153   7F04         MOV       R7,#0x4
+   \   000155   02....       LJMP      ?BANKED_LEAVE_XDATA
+    407          }
+    408          
+    409          
+    410          /*********************************************************************
+    411           * @fn      LampCtrl_HandleKeys
+    412           *
+    413           * @brief   Handles all key events for this device.
+    414           *
+    415           * @param   shift - true if in shift/alt.
+    416           * @param   keys - bit field for key events. Valid entries:
+    417           *                 HAL_KEY_SW_4
+    418           *                 HAL_KEY_SW_3
+    419           *                 HAL_KEY_SW_2
+    420           *                 HAL_KEY_SW_1
+    421           *
+    422           * @return  none
+    423           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    424          static void LampCtrl_HandleKeys( uint8 shift, uint8 keys )
+   \                     LampCtrl_HandleKeys:
+    425          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000   74F6         MOV       A,#-0xa
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 33
+   \   000005   74DF         MOV       A,#-0x21
+   \   000007   12....       LCALL     ?ALLOC_XSTACK8
+   \   00000A   EA           MOV       A,R2
+   \   00000B   FE           MOV       R6,A
+    426            (void) shift;
+    427          
+    428          #if defined ( ZDO_COORDINATOR )
+    429          
+    430          #else
+    431            uint8 ledstate = 0;
+    432            
+    433            uint16 flashTime;
+    434            
+    435            uint8 afstatus;
+    436            
+    437            if ( keys & HAL_KEY_SW_6 )//D1按键
+   \   00000C   A2E5         MOV       C,0xE0 /* A   */.5
+   \   00000E   4003         JC        $+5
+   \   000010   02....       LJMP      ??LampCtrl_HandleKeys_0 & 0xFFFF
+    438              {
+    439                ledstate = HalLedGetState();
+   \   000013                ; Setup parameters for call to function HalLedGetState
+   \   000013   12....       LCALL     `??HalLedGetState::?relay`; Banked call to: HalLedGetState
+   \   000016   E9           MOV       A,R1
+   \   000017   F8           MOV       R0,A
+    440                
+    441                  if ( ledstate & 0x01 )//是否是灭
+   \   000018   A2E0         MOV       C,0xE0 /* A   */.0
+   \   00001A   5039         JNC       ??LampCtrl_HandleKeys_1
+    442                  {
+    443                    HalLedSet( HAL_LED_1 , HAL_LED_MODE_OFF );
+   \   00001C                ; Setup parameters for call to function HalLedSet
+   \   00001C   7A00         MOV       R2,#0x0
+   \   00001E   7901         MOV       R1,#0x1
+   \   000020   12....       LCALL     `??HalLedSet::?relay`; Banked call to: HalLedSet
+    444                    uint8 data[16] = "Command,KEY1,on,";
+   \   000023   90....       MOV       DPTR,#`?<Constant "Command,KEY1,on,">`
+   \   000026   AC..         MOV       R4,?XSP + 0
+   \   000028   AD..         MOV       R5,?XSP + 1
+   \   00002A   7410         MOV       A,#0x10
+   \   00002C   12....       LCALL     ?MOVE_LONG8_XDATA_XDATA
+    445                    afstatus = AF_DataRequest(&LampCtrl_Periodic_DstAddr,
+    446                                    &LampCtrl_epDesc,
+    447                                    LAMPCTRL_KEYMSG_CLUSTERID,
+    448                                    sizeof(data),
+    449                                    data,
+    450                                    &LampCtrl_TransID,
+    451                                    AF_DISCV_ROUTE,
+    452                                    AF_DEFAULT_RADIUS );
+   \   00002F                ; Setup parameters for call to function AF_DataRequest
+   \   00002F   75..1E       MOV       ?V0,#0x1e
+   \   000032   78..         MOV       R0,#?V0
+   \   000034   12....       LCALL     ?PUSH_XSTACK_I_ONE
+   \   000037   75....       MOV       ?V0,#LampCtrl_TransID & 0xff
+   \   00003A   75....       MOV       ?V1,#(LampCtrl_TransID >> 8) & 0xff
+   \   00003D   78..         MOV       R0,#?V0
+   \   00003F   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   000042   7403         MOV       A,#0x3
+   \   000044   12....       LCALL     ?XSTACK_DISP100_8
+   \   000047   88..         MOV       ?V0,R0
+   \   000049   89..         MOV       ?V1,R1
+   \   00004B   78..         MOV       R0,#?V0
+   \   00004D   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   000050   75..10       MOV       ?V0,#0x10
+   \   000053   8038         SJMP      ??LampCtrl_HandleKeys_2
+    453                  }
+    454                  else
+    455                  {
+    456                    HalLedSet( HAL_LED_1 , HAL_LED_MODE_ON );
+   \                     ??LampCtrl_HandleKeys_1:
+   \   000055                ; Setup parameters for call to function HalLedSet
+   \   000055   7A01         MOV       R2,#0x1
+   \   000057   7901         MOV       R1,#0x1
+   \   000059   12....       LCALL     `??HalLedSet::?relay`; Banked call to: HalLedSet
+    457                    uint8 data[17] = "Command,KEY1,off,";
+   \   00005C   90....       MOV       DPTR,#`?<Constant "Command,KEY1,off,">`
+   \   00005F   7410         MOV       A,#0x10
+   \   000061   12....       LCALL     ?XSTACK_DISP102_8
+   \   000064   7411         MOV       A,#0x11
+   \   000066   12....       LCALL     ?MOVE_LONG8_XDATA_XDATA
+    458                    afstatus = AF_DataRequest(&LampCtrl_Periodic_DstAddr,
+    459                                    &LampCtrl_epDesc,
+    460                                    LAMPCTRL_KEYMSG_CLUSTERID,
+    461                                    sizeof(data),
+    462                                    data,
+    463                                    &LampCtrl_TransID,
+    464                                    AF_DISCV_ROUTE,
+    465                                    AF_DEFAULT_RADIUS );
+   \   000069                ; Setup parameters for call to function AF_DataRequest
+   \   000069   75..1E       MOV       ?V0,#0x1e
+   \   00006C   78..         MOV       R0,#?V0
+   \   00006E   12....       LCALL     ?PUSH_XSTACK_I_ONE
+   \   000071   75....       MOV       ?V0,#LampCtrl_TransID & 0xff
+   \   000074   75....       MOV       ?V1,#(LampCtrl_TransID >> 8) & 0xff
+   \   000077   78..         MOV       R0,#?V0
+   \   000079   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   00007C   7413         MOV       A,#0x13
+   \   00007E   12....       LCALL     ?XSTACK_DISP100_8
+   \   000081   88..         MOV       ?V0,R0
+   \   000083   89..         MOV       ?V1,R1
+   \   000085   78..         MOV       R0,#?V0
+   \   000087   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   00008A   75..11       MOV       ?V0,#0x11
+   \                     ??LampCtrl_HandleKeys_2:
+   \   00008D   75..00       MOV       ?V1,#0x0
+   \   000090   78..         MOV       R0,#?V0
+   \   000092   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   000095   75..01       MOV       ?V0,#0x1
+   \   000098   78..         MOV       R0,#?V0
+   \   00009A   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   00009D   7920         MOV       R1,#0x20
+   \   00009F   7C..         MOV       R4,#LampCtrl_epDesc & 0xff
+   \   0000A1   7D..         MOV       R5,#(LampCtrl_epDesc >> 8) & 0xff
+   \   0000A3   7A..         MOV       R2,#LampCtrl_Periodic_DstAddr & 0xff
+   \   0000A5   7B..         MOV       R3,#(LampCtrl_Periodic_DstAddr >> 8) & 0xff
+   \   0000A7   12....       LCALL     `??AF_DataRequest::?relay`; Banked call to: AF_DataRequest
+   \   0000AA   7409         MOV       A,#0x9
+   \   0000AC   12....       LCALL     ?DEALLOC_XSTACK8
+   \   0000AF   E9           MOV       A,R1
+    466                  }
+    467          
+    468                if ( afstatus == afStatus_SUCCESS )
+   \   0000B0   6021         JZ        ??LampCtrl_HandleKeys_0
+    469                
+    470                {
+    471                  
+    472                  
+    473                }
+    474                else
+    475                {
+    476                  ledstate = HalLedGetState();
+   \   0000B2                ; Setup parameters for call to function HalLedGetState
+   \   0000B2   12....       LCALL     `??HalLedGetState::?relay`; Banked call to: HalLedGetState
+   \   0000B5   E9           MOV       A,R1
+   \   0000B6   F8           MOV       R0,A
+    477                   if ( ledstate & 0x01 )
+   \   0000B7   A2E0         MOV       C,0xE0 /* A   */.0
+   \   0000B9   5004         JNC       ??LampCtrl_HandleKeys_3
+    478                  {
+    479                    HalLedSet( HAL_LED_1 , HAL_LED_MODE_OFF );
+   \   0000BB                ; Setup parameters for call to function HalLedSet
+   \   0000BB   7A00         MOV       R2,#0x0
+   \   0000BD   8002         SJMP      ??LampCtrl_HandleKeys_4
+    480                  }
+    481                  else
+    482                  {
+    483                    HalLedSet( HAL_LED_1 , HAL_LED_MODE_ON );
+   \                     ??LampCtrl_HandleKeys_3:
+   \   0000BF                ; Setup parameters for call to function HalLedSet
+   \   0000BF   7A01         MOV       R2,#0x1
+   \                     ??LampCtrl_HandleKeys_4:
+   \   0000C1   7901         MOV       R1,#0x1
+   \   0000C3   12....       LCALL     `??HalLedSet::?relay`; Banked call to: HalLedSet
+    484                  }
+    485                  
+    486                  flashTime = BUILD_UINT16(LO_UINT16( LAMPCTRL_FLASH_DURATION ), HI_UINT16( LAMPCTRL_FLASH_DURATION ) );
+    487                  HalLedBlink( HAL_LED_1, 4, 70, (flashTime / 2) );
+   \   0000C6                ; Setup parameters for call to function HalLedBlink
+   \   0000C6   7CF4         MOV       R4,#-0xc
+   \   0000C8   7D01         MOV       R5,#0x1
+   \   0000CA   7B46         MOV       R3,#0x46
+   \   0000CC   7A04         MOV       R2,#0x4
+   \   0000CE   7901         MOV       R1,#0x1
+   \   0000D0   12....       LCALL     `??HalLedBlink::?relay`; Banked call to: HalLedBlink
+    488                  
+    489                }
+    490                
+    491              }
+    492              if ( keys & HAL_KEY_SW_1 )//D2按键
+   \                     ??LampCtrl_HandleKeys_0:
+   \   0000D3   EE           MOV       A,R6
+   \   0000D4   A2E0         MOV       C,0xE0 /* A   */.0
+   \   0000D6   4003         JC        $+5
+   \   0000D8   02....       LJMP      ??LampCtrl_HandleKeys_5 & 0xFFFF
+    493              {
+    494                ledstate = HalLedGetState();
+   \   0000DB                ; Setup parameters for call to function HalLedGetState
+   \   0000DB   12....       LCALL     `??HalLedGetState::?relay`; Banked call to: HalLedGetState
+   \   0000DE   E9           MOV       A,R1
+   \   0000DF   F8           MOV       R0,A
+    495                
+    496                if ( ledstate & 2 )
+   \   0000E0   A2E1         MOV       C,0xE0 /* A   */.1
+   \   0000E2   5039         JNC       ??LampCtrl_HandleKeys_6
+    497                {
+    498                  HalLedSet(HAL_LED_2 , HAL_LED_MODE_OFF );
+   \   0000E4                ; Setup parameters for call to function HalLedSet
+   \   0000E4   7A00         MOV       R2,#0x0
+   \   0000E6   7902         MOV       R1,#0x2
+   \   0000E8   12....       LCALL     `??HalLedSet::?relay`; Banked call to: HalLedSet
+    499                  uint8 data[16] = "Command,KEY2,on,";
+   \   0000EB   90....       MOV       DPTR,#`?<Constant "Command,KEY2,on,">`
+   \   0000EE   AC..         MOV       R4,?XSP + 0
+   \   0000F0   AD..         MOV       R5,?XSP + 1
+   \   0000F2   7410         MOV       A,#0x10
+   \   0000F4   12....       LCALL     ?MOVE_LONG8_XDATA_XDATA
+    500                  afstatus = AF_DataRequest(&LampCtrl_Periodic_DstAddr,
+    501                                    &LampCtrl_epDesc,
+    502                                    LAMPCTRL_KEYMSG_CLUSTERID,
+    503                                    sizeof(data),
+    504                                    data,
+    505                                    &LampCtrl_TransID,
+    506                                    AF_DISCV_ROUTE,
+    507                                    AF_DEFAULT_RADIUS );
+   \   0000F7                ; Setup parameters for call to function AF_DataRequest
+   \   0000F7   75..1E       MOV       ?V0,#0x1e
+   \   0000FA   78..         MOV       R0,#?V0
+   \   0000FC   12....       LCALL     ?PUSH_XSTACK_I_ONE
+   \   0000FF   75....       MOV       ?V0,#LampCtrl_TransID & 0xff
+   \   000102   75....       MOV       ?V1,#(LampCtrl_TransID >> 8) & 0xff
+   \   000105   78..         MOV       R0,#?V0
+   \   000107   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   00010A   7403         MOV       A,#0x3
+   \   00010C   12....       LCALL     ?XSTACK_DISP100_8
+   \   00010F   88..         MOV       ?V0,R0
+   \   000111   89..         MOV       ?V1,R1
+   \   000113   78..         MOV       R0,#?V0
+   \   000115   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   000118   75..10       MOV       ?V0,#0x10
+   \   00011B   8038         SJMP      ??LampCtrl_HandleKeys_7
+    508                }
+    509                else
+    510                {
+    511                  HalLedSet(HAL_LED_2 , HAL_LED_MODE_ON );
+   \                     ??LampCtrl_HandleKeys_6:
+   \   00011D                ; Setup parameters for call to function HalLedSet
+   \   00011D   7A01         MOV       R2,#0x1
+   \   00011F   7902         MOV       R1,#0x2
+   \   000121   12....       LCALL     `??HalLedSet::?relay`; Banked call to: HalLedSet
+    512                  uint8 data[17] = "Command,KEY2,off,";
+   \   000124   90....       MOV       DPTR,#`?<Constant "Command,KEY2,off,">`
+   \   000127   7410         MOV       A,#0x10
+   \   000129   12....       LCALL     ?XSTACK_DISP102_8
+   \   00012C   7411         MOV       A,#0x11
+   \   00012E   12....       LCALL     ?MOVE_LONG8_XDATA_XDATA
+    513                  afstatus = AF_DataRequest(&LampCtrl_Periodic_DstAddr,
+    514                                    &LampCtrl_epDesc,
+    515                                    LAMPCTRL_KEYMSG_CLUSTERID,
+    516                                    sizeof(data),
+    517                                    data,
+    518                                    &LampCtrl_TransID,
+    519                                    AF_DISCV_ROUTE,
+    520                                    AF_DEFAULT_RADIUS );
+   \   000131                ; Setup parameters for call to function AF_DataRequest
+   \   000131   75..1E       MOV       ?V0,#0x1e
+   \   000134   78..         MOV       R0,#?V0
+   \   000136   12....       LCALL     ?PUSH_XSTACK_I_ONE
+   \   000139   75....       MOV       ?V0,#LampCtrl_TransID & 0xff
+   \   00013C   75....       MOV       ?V1,#(LampCtrl_TransID >> 8) & 0xff
+   \   00013F   78..         MOV       R0,#?V0
+   \   000141   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   000144   7413         MOV       A,#0x13
+   \   000146   12....       LCALL     ?XSTACK_DISP100_8
+   \   000149   88..         MOV       ?V0,R0
+   \   00014B   89..         MOV       ?V1,R1
+   \   00014D   78..         MOV       R0,#?V0
+   \   00014F   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   000152   75..11       MOV       ?V0,#0x11
+   \                     ??LampCtrl_HandleKeys_7:
+   \   000155   75..00       MOV       ?V1,#0x0
+   \   000158   78..         MOV       R0,#?V0
+   \   00015A   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   00015D   75..01       MOV       ?V0,#0x1
+   \   000160   78..         MOV       R0,#?V0
+   \   000162   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   000165   7920         MOV       R1,#0x20
+   \   000167   7C..         MOV       R4,#LampCtrl_epDesc & 0xff
+   \   000169   7D..         MOV       R5,#(LampCtrl_epDesc >> 8) & 0xff
+   \   00016B   7A..         MOV       R2,#LampCtrl_Periodic_DstAddr & 0xff
+   \   00016D   7B..         MOV       R3,#(LampCtrl_Periodic_DstAddr >> 8) & 0xff
+   \   00016F   12....       LCALL     `??AF_DataRequest::?relay`; Banked call to: AF_DataRequest
+   \   000172   7409         MOV       A,#0x9
+   \   000174   12....       LCALL     ?DEALLOC_XSTACK8
+   \   000177   E9           MOV       A,R1
+    521                }      
+    522                if ( afstatus == afStatus_SUCCESS )
+   \   000178   6021         JZ        ??LampCtrl_HandleKeys_5
+    523                
+    524                {
+    525          
+    526                  
+    527                }
+    528                else
+    529                {
+    530                  ledstate = HalLedGetState();
+   \   00017A                ; Setup parameters for call to function HalLedGetState
+   \   00017A   12....       LCALL     `??HalLedGetState::?relay`; Banked call to: HalLedGetState
+   \   00017D   E9           MOV       A,R1
+   \   00017E   F8           MOV       R0,A
+    531                  if ( ledstate & 2 )
+   \   00017F   A2E1         MOV       C,0xE0 /* A   */.1
+   \   000181   5004         JNC       ??LampCtrl_HandleKeys_8
+    532                  {
+    533                    HalLedSet(HAL_LED_2 , HAL_LED_MODE_OFF );
+   \   000183                ; Setup parameters for call to function HalLedSet
+   \   000183   7A00         MOV       R2,#0x0
+   \   000185   8002         SJMP      ??LampCtrl_HandleKeys_9
+    534                  }
+    535                  else
+    536                  {
+    537                    HalLedSet(HAL_LED_2 , HAL_LED_MODE_ON );
+   \                     ??LampCtrl_HandleKeys_8:
+   \   000187                ; Setup parameters for call to function HalLedSet
+   \   000187   7A01         MOV       R2,#0x1
+   \                     ??LampCtrl_HandleKeys_9:
+   \   000189   7902         MOV       R1,#0x2
+   \   00018B   12....       LCALL     `??HalLedSet::?relay`; Banked call to: HalLedSet
+    538                  }
+    539                  
+    540                  flashTime = BUILD_UINT16(LO_UINT16( LAMPCTRL_FLASH_DURATION ), HI_UINT16( LAMPCTRL_FLASH_DURATION ) );
+    541                  HalLedBlink( HAL_LED_2, 4, 70, (flashTime / 2) );
+   \   00018E                ; Setup parameters for call to function HalLedBlink
+   \   00018E   7CF4         MOV       R4,#-0xc
+   \   000190   7D01         MOV       R5,#0x1
+   \   000192   7B46         MOV       R3,#0x46
+   \   000194   7A04         MOV       R2,#0x4
+   \   000196   7902         MOV       R1,#0x2
+   \   000198   12....       LCALL     `??HalLedBlink::?relay`; Banked call to: HalLedBlink
+    542                  
+    543                }
+    544              }
+    545          #endif
+    546          }
+   \                     ??LampCtrl_HandleKeys_5:
+   \   00019B   7421         MOV       A,#0x21
+   \   00019D   12....       LCALL     ?DEALLOC_XSTACK8
+   \   0001A0                REQUIRE ?Subroutine0
+   \   0001A0                ; // Fall through to label ?Subroutine0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   7F02         MOV       R7,#0x2
+   \   000002   02....       LJMP      ?BANKED_LEAVE_XDATA
+    547          
+    548          /*********************************************************************
+    549           * LOCAL FUNCTIONS
+    550           */
+    551          
+    552          /*********************************************************************
+    553           * @fn      LampCtrl_MessageMSGCB
+    554           *
+    555           * @brief   Data message processor callback.  This function processes
+    556           *          any incoming data - probably from other devices.  So, based
+    557           *          on cluster ID, perform the intended action.
+    558           *
+    559           * @param   none
+    560           *
+    561           * @return  none
+    562           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    563          static void LampCtrl_MessageMSGCB( afIncomingMSGPacket_t *pkt )
+   \                     LampCtrl_MessageMSGCB:
+    564          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000   74F6         MOV       A,#-0xa
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+    565            byte data;
+    566            
+    567            switch ( pkt->clusterId )
+   \   000005   8A82         MOV       DPL,R2
+   \   000007   8B83         MOV       DPH,R3
+   \   000009   A3           INC       DPTR
+   \   00000A   A3           INC       DPTR
+   \   00000B   A3           INC       DPTR
+   \   00000C   A3           INC       DPTR
+   \   00000D   E0           MOVX      A,@DPTR
+   \   00000E   F5..         MOV       ?V0,A
+   \   000010   A3           INC       DPTR
+   \   000011   E0           MOVX      A,@DPTR
+   \   000012   F5..         MOV       ?V1,A
+   \   000014   78..         MOV       R0,#?V0
+   \   000016   12....       LCALL     ?US_SWITCH_DENSE
+   \                     `?<Jumptable for LampCtrl_MessageMSGCB>_0`:
+   \   000019   0100         DW        1
+   \   00001B   02           DB        2
+   \   00001C   ....         DW        ??LampCtrl_MessageMSGCB_0
+   \   00001E   ....         DW        ??LampCtrl_MessageMSGCB_1
+   \   000020   ....         DW        ??LampCtrl_MessageMSGCB_2
+   \   000022   ....         DW        ??LampCtrl_MessageMSGCB_1
+    568            {
+    569              case LAMPCTRL_KEYMSG_CLUSTERID:
+    570                HalUARTWrite(0 , pkt->cmd.Data , pkt->cmd.DataLength);
+    571                HalUARTWrite(0 , "\n" , 1);
+    572                break;
+    573                
+    574              case LAMPCTRL_REGMSG_CLUSTERID:
+    575                HalUARTWrite(0 , pkt->cmd.Data , pkt->cmd.DataLength);
+   \                     ??LampCtrl_MessageMSGCB_1:
+   \   000024                ; Setup parameters for call to function HalUARTWrite
+   \   000024   EA           MOV       A,R2
+   \   000025   2420         ADD       A,#0x20
+   \   000027   F582         MOV       DPL,A
+   \   000029   E4           CLR       A
+   \   00002A   3B           ADDC      A,R3
+   \   00002B   F583         MOV       DPH,A
+   \   00002D   E0           MOVX      A,@DPTR
+   \   00002E   FC           MOV       R4,A
+   \   00002F   A3           INC       DPTR
+   \   000030   E0           MOVX      A,@DPTR
+   \   000031   FD           MOV       R5,A
+   \   000032   12....       LCALL     ?Subroutine1 & 0xFFFF
+   \                     ??CrossCallReturnLabel_0:
+   \   000035   FA           MOV       R2,A
+   \   000036   A3           INC       DPTR
+   \   000037   E0           MOVX      A,@DPTR
+   \   000038   FB           MOV       R3,A
+   \   000039   7900         MOV       R1,#0x0
+   \   00003B   12....       LCALL     `??HalUARTWrite::?relay`; Banked call to: HalUARTWrite
+    576                HalUARTWrite(0 , "\n" , 1);
+   \   00003E                ; Setup parameters for call to function HalUARTWrite
+   \   00003E   7C01         MOV       R4,#0x1
+   \   000040   7D00         MOV       R5,#0x0
+   \   000042   7A..         MOV       R2,#`?<Constant "\\n">` & 0xff
+   \   000044   7B..         MOV       R3,#(`?<Constant "\\n">` >> 8) & 0xff
+   \   000046   7900         MOV       R1,#0x0
+   \   000048   12....       LCALL     `??HalUARTWrite::?relay`; Banked call to: HalUARTWrite
+    577                break;
+   \   00004B   803F         SJMP      ??LampCtrl_MessageMSGCB_0
+    578                
+    579              case LAMPCTRL_PCMSG_CLUSTERID:      
+    580                data = pkt->cmd.Data[0];
+   \                     ??LampCtrl_MessageMSGCB_2:
+   \   00004D   12....       LCALL     ?Subroutine1 & 0xFFFF
+   \                     ??CrossCallReturnLabel_1:
+   \   000050   F8           MOV       R0,A
+   \   000051   A3           INC       DPTR
+   \   000052   E0           MOVX      A,@DPTR
+   \   000053   F583         MOV       DPH,A
+   \   000055   8882         MOV       DPL,R0
+   \   000057   E0           MOVX      A,@DPTR
+   \   000058   F8           MOV       R0,A
+    581                if ( data == 0x10 )//点亮
+   \   000059   7410         MOV       A,#0x10
+   \   00005B   68           XRL       A,R0
+   \   00005C   7004         JNZ       ??LampCtrl_MessageMSGCB_3
+    582                {
+    583                  HalLedSet( HAL_LED_1 , HAL_LED_MODE_OFF );
+   \   00005E                ; Setup parameters for call to function HalLedSet
+   \   00005E   7A00         MOV       R2,#0x0
+   \   000060   8007         SJMP      ??LampCtrl_MessageMSGCB_4
+    584                }
+    585                if ( data == 0x11 )//熄灭
+   \                     ??LampCtrl_MessageMSGCB_3:
+   \   000062   7411         MOV       A,#0x11
+   \   000064   68           XRL       A,R0
+   \   000065   7006         JNZ       ??LampCtrl_MessageMSGCB_5
+    586                {
+    587                  HalLedSet( HAL_LED_1 , HAL_LED_MODE_ON );
+   \   000067                ; Setup parameters for call to function HalLedSet
+   \   000067   7A01         MOV       R2,#0x1
+   \                     ??LampCtrl_MessageMSGCB_4:
+   \   000069   7901         MOV       R1,#0x1
+   \   00006B   801C         SJMP      ??LampCtrl_MessageMSGCB_6
+    588                }
+    589                if ( data == 0x20 )
+   \                     ??LampCtrl_MessageMSGCB_5:
+   \   00006D   7420         MOV       A,#0x20
+   \   00006F   68           XRL       A,R0
+   \   000070   6013         JZ        ??LampCtrl_MessageMSGCB_7
+    590                {
+    591                  HalLedSet( HAL_LED_2 , HAL_LED_MODE_OFF );
+   \   000072                ; Setup parameters for call to function HalLedSet
+    592                }
+    593                if ( data == 0x21 )
+   \   000072   7421         MOV       A,#0x21
+   \   000074   68           XRL       A,R0
+   \   000075   7004         JNZ       ??LampCtrl_MessageMSGCB_8
+    594                {
+    595                  HalLedSet( HAL_LED_2 , HAL_LED_MODE_ON );
+   \   000077                ; Setup parameters for call to function HalLedSet
+   \   000077   7A01         MOV       R2,#0x1
+   \   000079   800C         SJMP      ??LampCtrl_MessageMSGCB_9
+    596                }
+    597                if ( data == 0x00 )
+   \                     ??LampCtrl_MessageMSGCB_8:
+   \   00007B   E8           MOV       A,R0
+   \   00007C   700E         JNZ       ??LampCtrl_MessageMSGCB_0
+    598                {
+    599                  HalLedSet( HAL_LED_1 , HAL_LED_MODE_OFF );
+   \   00007E                ; Setup parameters for call to function HalLedSet
+   \   00007E   7A00         MOV       R2,#0x0
+   \   000080   7901         MOV       R1,#0x1
+   \   000082   12....       LCALL     `??HalLedSet::?relay`; Banked call to: HalLedSet
+    600                  HalLedSet( HAL_LED_2 , HAL_LED_MODE_OFF );
+   \   000085                ; Setup parameters for call to function HalLedSet
+   \                     ??LampCtrl_MessageMSGCB_7:
+   \   000085   7A00         MOV       R2,#0x0
+   \                     ??LampCtrl_MessageMSGCB_9:
+   \   000087   7902         MOV       R1,#0x2
+   \                     ??LampCtrl_MessageMSGCB_6:
+   \   000089   12....       LCALL     `??HalLedSet::?relay`; Banked call to: HalLedSet
+    601                }
+    602              break;
+    603              
+    604            }
+    605          }
+   \                     ??LampCtrl_MessageMSGCB_0:
+   \   00008C   02....       LJMP      ?Subroutine0 & 0xFFFF
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   EA           MOV       A,R2
+   \   000001   2422         ADD       A,#0x22
+   \   000003   F582         MOV       DPL,A
+   \   000005   E4           CLR       A
+   \   000006   3B           ADDC      A,R3
+   \   000007   F583         MOV       DPH,A
+   \   000009   E0           MOVX      A,@DPTR
+   \   00000A   22           RET
+    606          
+    607          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    608          static void LampCtrl_CallBack(uint8 port , uint8 event)
+   \                     LampCtrl_CallBack:
+    609          {
+   \   000000   74F7         MOV       A,#-0x9
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV       A,R2
+   \   000006   FE           MOV       R6,A
+    610            (void)port;
+    611          
+    612            if ((event & (HAL_UART_RX_FULL | HAL_UART_RX_ABOUT_FULL | HAL_UART_RX_TIMEOUT)) && !LampCtrl_TxLen)
+   \   000007   7407         MOV       A,#0x7
+   \   000009   5E           ANL       A,R6
+   \   00000A   6009         JZ        ??LampCtrl_CallBack_0
+   \   00000C   90....       MOV       DPTR,#LampCtrl_TxLen
+   \   00000F   E0           MOVX      A,@DPTR
+   \   000010   7003         JNZ       ??LampCtrl_CallBack_0
+    613            {
+    614              LampCtrl_Send();
+   \   000012                ; Setup parameters for call to function LampCtrl_Send
+   \   000012   12....       LCALL     `??LampCtrl_Send::?relay`; Banked call to: LampCtrl_Send
+    615            }
+    616            
+    617            
+    618            
+    619          }
+   \                     ??LampCtrl_CallBack_0:
+   \   000015   7F01         MOV       R7,#0x1
+   \   000017   02....       LJMP      ?BANKED_LEAVE_XDATA
+    620          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    621          static void LampCtrl_Send( )//从电脑接收数据，准备发给终端
+   \                     LampCtrl_Send:
+    622          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000   74F6         MOV       A,#-0xa
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+    623              LampCtrl_TxLen = HalUARTRead(LAMPCTRL_PORT, LampCtrl_TxBuf, LAMPCTRL_TX_MAX);
+   \   000005                ; Setup parameters for call to function HalUARTRead
+   \   000005   7C50         MOV       R4,#0x50
+   \   000007   7D00         MOV       R5,#0x0
+   \   000009   7A..         MOV       R2,#LampCtrl_TxBuf & 0xff
+   \   00000B   7B..         MOV       R3,#(LampCtrl_TxBuf >> 8) & 0xff
+   \   00000D   7900         MOV       R1,#0x0
+   \   00000F   12....       LCALL     `??HalUARTRead::?relay`; Banked call to: HalUARTRead
+   \   000012   EA           MOV       A,R2
+   \   000013   90....       MOV       DPTR,#LampCtrl_TxLen
+   \   000016   F0           MOVX      @DPTR,A
+    624            
+    625              if (LampCtrl_TxLen)
+   \   000017   605C         JZ        ??LampCtrl_Send_0
+    626              {
+    627                if (afStatus_SUCCESS != AF_DataRequest(&LampCtrl_TxAddr,
+    628                                                       &LampCtrl_epDesc,
+    629                                                       LAMPCTRL_PCMSG_CLUSTERID,
+    630                                                       LampCtrl_TxLen,
+    631                                                       LampCtrl_TxBuf,
+    632                                                       &LampCtrl_TransID, 
+    633                                                       0, 
+    634                                                       AF_DEFAULT_RADIUS))
+   \   000019                ; Setup parameters for call to function AF_DataRequest
+   \   000019   75..1E       MOV       ?V0,#0x1e
+   \   00001C   78..         MOV       R0,#?V0
+   \   00001E   12....       LCALL     ?PUSH_XSTACK_I_ONE
+   \   000021   75....       MOV       ?V0,#LampCtrl_TransID & 0xff
+   \   000024   75....       MOV       ?V1,#(LampCtrl_TransID >> 8) & 0xff
+   \   000027   78..         MOV       R0,#?V0
+   \   000029   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   00002C   75....       MOV       ?V0,#LampCtrl_TxBuf & 0xff
+   \   00002F   75....       MOV       ?V1,#(LampCtrl_TxBuf >> 8) & 0xff
+   \   000032   78..         MOV       R0,#?V0
+   \   000034   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   000037   90....       MOV       DPTR,#LampCtrl_TxLen
+   \   00003A   E0           MOVX      A,@DPTR
+   \   00003B   F5..         MOV       ?V0,A
+   \   00003D   75..00       MOV       ?V1,#0x0
+   \   000040   78..         MOV       R0,#?V0
+   \   000042   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   000045   75..02       MOV       ?V0,#0x2
+   \   000048   78..         MOV       R0,#?V0
+   \   00004A   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   00004D   7900         MOV       R1,#0x0
+   \   00004F   7C..         MOV       R4,#LampCtrl_epDesc & 0xff
+   \   000051   7D..         MOV       R5,#(LampCtrl_epDesc >> 8) & 0xff
+   \   000053   7A..         MOV       R2,#LampCtrl_TxAddr & 0xff
+   \   000055   7B..         MOV       R3,#(LampCtrl_TxAddr >> 8) & 0xff
+   \   000057   12....       LCALL     `??AF_DataRequest::?relay`; Banked call to: AF_DataRequest
+   \   00005A   7409         MOV       A,#0x9
+   \   00005C   12....       LCALL     ?DEALLOC_XSTACK8
+   \   00005F   E9           MOV       A,R1
+   \   000060   600E         JZ        ??LampCtrl_Send_1
+    635                {
+    636                  osal_set_event(LampCtrl_TaskID, LAMPCTRL_SEND_EVT   /*todo*/  );
+   \   000062                ; Setup parameters for call to function osal_set_event
+   \   000062   7A02         MOV       R2,#0x2
+   \   000064   7B00         MOV       R3,#0x0
+   \   000066   90....       MOV       DPTR,#LampCtrl_TaskID
+   \   000069   E0           MOVX      A,@DPTR
+   \   00006A   F9           MOV       R1,A
+   \   00006B   12....       LCALL     `??osal_set_event::?relay`; Banked call to: osal_set_event
+   \   00006E   8005         SJMP      ??LampCtrl_Send_0
+    637                }
+    638                else
+    639                {
+    640                  LampCtrl_TxLen = 0;
+   \                     ??LampCtrl_Send_1:
+   \   000070   90....       MOV       DPTR,#LampCtrl_TxLen
+   \   000073   E4           CLR       A
+   \   000074   F0           MOVX      @DPTR,A
+    641                }
+    642              }  
+    643          }
+   \                     ??LampCtrl_Send_0:
+   \   000075   02....       LJMP      ?Subroutine0 & 0xFFFF
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for AppTitle>`:
+   \   000000   4C616D70     DB "LampCtrl"
+   \            4374726C
+   \            00      
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for LampCtrl_epDesc>`:
+   \   000000   0A           DB 10
+   \   000001   ....         DW LampCtrl_TaskID
+   \   000003   ....         DW LampCtrl_SimpleDesc
+   \   000005   00           DB 0
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??LampCtrl_Init::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    LampCtrl_Init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??LampCtrl_ProcessEvent::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    LampCtrl_ProcessEvent
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??LampCtrl_HandleKeys::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    LampCtrl_HandleKeys
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??LampCtrl_MessageMSGCB::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    LampCtrl_MessageMSGCB
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??LampCtrl_CallBack::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    LampCtrl_CallBack
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??LampCtrl_Send::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    LampCtrl_Send
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "Group 1">`:
+   \   000000   47726F75     DB "Group 1"
+   \            70203100
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "LampCtrl">`:
+   \   000000   4C616D70     DB "LampCtrl"
+   \            4374726C
+   \            00      
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "Register,KEY1,on,">`:
+   \   000000   52656769     DB 52H, 65H, 67H, 69H, 73H, 74H, 65H, 72H
+   \            73746572
+   \   000008   2C4B4559     DB 2CH, 4BH, 45H, 59H, 31H, 2CH, 6FH, 6EH
+   \            312C6F6E
+   \   000010   2C           DB 2CH
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "Register,KEY2,on,">`:
+   \   000000   52656769     DB 52H, 65H, 67H, 69H, 73H, 74H, 65H, 72H
+   \            73746572
+   \   000008   2C4B4559     DB 2CH, 4BH, 45H, 59H, 32H, 2CH, 6FH, 6EH
+   \            322C6F6E
+   \   000010   2C           DB 2CH
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "Command,KEY1,on,">`:
+   \   000000   436F6D6D     DB 43H, 6FH, 6DH, 6DH, 61H, 6EH, 64H, 2CH
+   \            616E642C
+   \   000008   4B455931     DB 4BH, 45H, 59H, 31H, 2CH, 6FH, 6EH, 2CH
+   \            2C6F6E2C
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "Command,KEY1,off,">`:
+   \   000000   436F6D6D     DB 43H, 6FH, 6DH, 6DH, 61H, 6EH, 64H, 2CH
+   \            616E642C
+   \   000008   4B455931     DB 4BH, 45H, 59H, 31H, 2CH, 6FH, 66H, 66H
+   \            2C6F6666
+   \   000010   2C           DB 2CH
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "Command,KEY2,on,">`:
+   \   000000   436F6D6D     DB 43H, 6FH, 6DH, 6DH, 61H, 6EH, 64H, 2CH
+   \            616E642C
+   \   000008   4B455932     DB 4BH, 45H, 59H, 32H, 2CH, 6FH, 6EH, 2CH
+   \            2C6F6E2C
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "Command,KEY2,off,">`:
+   \   000000   436F6D6D     DB 43H, 6FH, 6DH, 6DH, 61H, 6EH, 64H, 2CH
+   \            616E642C
+   \   000008   4B455932     DB 4BH, 45H, 59H, 32H, 2CH, 6FH, 66H, 66H
+   \            2C6F6666
+   \   000010   2C           DB 2CH
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "\\n">`:
+   \   000000   0A00         DB "\012"
+    644          
+    645          
+    646          /*********************************************************************
+    647           */
+
+   Maximum stack usage in bytes:
+
+   XSTACK Function
+   ------ --------
+      9   LampCtrl_CallBack
+        9   -> LampCtrl_Send
+     98   LampCtrl_HandleKeys
+       52   -> AF_DataRequest
+       43   -> HalLedBlink
+       43   -> HalLedGetState
+       43   -> HalLedSet
+     43   LampCtrl_Init
+       40   -> HalLcdWriteString
+       40   -> HalUARTOpen
+       40   -> MT_UartRegisterTaskID
+       40   -> RegisterForKeys
+       40   -> ZDO_RegisterForZDOMsg
+       40   -> afRegister
+       40   -> aps_AddGroup
+       43   -> osal_memcpy
+     56   LampCtrl_MessageMSGCB
+       10   -> HalLedSet
+       10   -> HalUARTWrite
+     55   LampCtrl_ProcessEvent
+       55   -> AF_DataRequest
+       46   -> HalLedBlink
+       46   -> LampCtrl_HandleKeys
+       46   -> LampCtrl_MessageMSGCB
+       46   -> LampCtrl_Send
+       46   -> osal_msg_deallocate
+       46   -> osal_msg_receive
+     65   LampCtrl_Send
+       19   -> AF_DataRequest
+       10   -> HalUARTRead
+       10   -> osal_set_event
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      17  ?<Constant "Command,KEY1,off,">
+      16  ?<Constant "Command,KEY1,on,">
+      17  ?<Constant "Command,KEY2,off,">
+      16  ?<Constant "Command,KEY2,on,">
+       8  ?<Constant "Group 1">
+       9  ?<Constant "LampCtrl">
+      17  ?<Constant "Register,KEY1,on,">
+      17  ?<Constant "Register,KEY2,on,">
+       2  ?<Constant "\n">
+       9  ?<Initializer for AppTitle>
+       6  ?<Initializer for LampCtrl_epDesc>
+       5  ?Subroutine0
+      11  ?Subroutine1
+       9  AppTitle
+      26  LampCtrl_CallBack
+       6  LampCtrl_CallBack::?relay
+       6  LampCtrl_ClusterList
+      12  LampCtrl_Flash_DstAddr
+      18  LampCtrl_Group
+     416  LampCtrl_HandleKeys
+       6  LampCtrl_HandleKeys::?relay
+     283  LampCtrl_Init
+       6  LampCtrl_Init::?relay
+     143  LampCtrl_MessageMSGCB
+       6  LampCtrl_MessageMSGCB::?relay
+       1  LampCtrl_NwkState
+      12  LampCtrl_Periodic_DstAddr
+     344  LampCtrl_ProcessEvent
+       6  LampCtrl_ProcessEvent::?relay
+     120  LampCtrl_Send
+       6  LampCtrl_Send::?relay
+      12  LampCtrl_SimpleDesc
+       1  LampCtrl_TaskID
+       1  LampCtrl_TransID
+      12  LampCtrl_TxAddr
+      81  LampCtrl_TxBuf
+       1  LampCtrl_TxLen
+       6  LampCtrl_epDesc
+
+ 
+ 1 348 bytes in segment BANKED_CODE
+    36 bytes in segment BANK_RELAYS
+    15 bytes in segment XDATA_I
+    15 bytes in segment XDATA_ID
+   137 bytes in segment XDATA_ROM_C
+   139 bytes in segment XDATA_Z
+ 
+    51 bytes of CODE     memory
+   137 bytes of CONST    memory
+ 1 348 bytes of HUGECODE memory
+   154 bytes of XDATA    memory
+
+Errors: none
+Warnings: none
